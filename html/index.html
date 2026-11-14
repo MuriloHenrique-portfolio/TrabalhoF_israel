@@ -8,28 +8,29 @@
 </head>
 <body>
     <div class="cabecalho">
-        <div class="logo"><p>Nome da empresa</p></div>
+        <div class="logo"><p>Segurança Integrada</p></div>
     </div>
-    <div class="conteudo">
+    <main class="conteudo">
         <h1>Cadastro e acesso</h1>
+        <p>Acesso demonstrativo. Use dados fictícios para testar os formulários.</p>
         <div class="lista-blocos">
-            <div class="bloco">
+            <form class="bloco" action="inicio.html" method="get" autocomplete="off">
                 <h2>Já tenho conta</h2>
-                <label>E-mail<input type="email" placeholder="seuemail@exemplo.com"></label>
-                <label>Senha<input type="password" placeholder="Sua senha"></label>
-                <p><a class="botao" href="inicio.html">Entrar</a></p>
-            </div>
-            <div class="bloco">
+                <label>E-mail<input type="email" placeholder="voce@exemplo.com" required></label>
+                <label>Senha de teste<input type="password" required></label>
+                <button class="botao" type="submit">Entrar</button>
+            </form>
+            <form class="bloco" action="inicio.html" method="get" autocomplete="off">
                 <h2>Criar conta</h2>
-                <label>Nome<input type="text" placeholder="Seu nome"></label>
-                <label>E-mail<input type="email" placeholder="seuemail@exemplo.com"></label>
-                <label>Senha<input type="password" placeholder="Crie uma senha"></label>
-                <a href="inicio.html">Cadastrar e entrar</a>
-            </div>
+                <label>Nome<input type="text" maxlength="80" required></label>
+                <label>E-mail<input type="email" placeholder="voce@exemplo.com" required></label>
+                <label>Senha de teste (mínimo de 6 caracteres)<input type="password" minlength="6" required></label>
+                <button class="botao" type="submit">Cadastrar e entrar</button>
+            </form>
         </div>
-    </div>
+    </main>
     <div class="rodape">
-        <p>Nome da empresa · Segurança física e digital.</p>
+        <p>Segurança Integrada · Segurança física e digital.</p>
     </div>
 </body>
 </html>

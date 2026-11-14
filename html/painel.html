@@ -8,24 +8,25 @@
 </head>
 <body>
     <div class="cabecalho">
-        <div class="logo"><p>Nome da empresa</p></div>
-        <div class="menu">
+        <div class="logo"><p>Segurança Integrada</p></div>
+        <nav class="menu" aria-label="Menu principal">
             <a href="inicio.html">Início</a>
             <a href="produtos.html">Produtos</a>
-            <a href="painel.html">Painel</a>
+            <a href="painel.html" aria-current="page">Painel</a>
             <a href="dispositivos.html">Meus dispositivos</a>
             <a href="protecao-digital.html">Proteção digital</a>
             <a href="alertas.html">Alertas</a>
             <a href="suporte.html">Suporte</a>
-        </div>
+        </nav>
     </div>
-    <div class="conteudo">
+    <main class="conteudo">
         <h1>Painel de segurança</h1>
-        <p>Olá, usuário! Confira o resumo da sua proteção.</p>
+        <p>Confira o resumo dos dispositivos, contas e alertas.</p>
+        <p><a href="#relatorio">Ver relatório de segurança</a></p>
         <div class="lista-blocos">
-            <div class="bloco"><h2>Dispositivos</h2><p>3 cadastrados: 2 conectados e 1 desconectado.</p><a href="dispositivos.html">Ver meus dispositivos</a></div>
-            <div class="bloco"><h2>Contas acompanhadas</h2><p>2 e-mails cadastrados para acompanhamento.</p><p>1 alerta digital.</p></div>
-            <div class="bloco"><h2>Alertas recentes</h2><p>3 avisos para consultar abaixo.</p><p>Confira as informações antes de tomar uma ação.</p></div>
+            <div class="bloco"><h2>Dispositivos</h2><p><strong class="numero-painel">3</strong> dispositivos cadastrados. <br>2 conectados e 1 desconectado.</p><a href="dispositivos.html">Ver meus dispositivos</a></div>
+            <div class="bloco"><h2>Contas acompanhadas</h2><p><strong class="numero-painel">2</strong> e-mails acompanhados.</p><p>1 alerta digital.</p></div>
+            <div class="bloco"><h2>Alertas recentes</h2><p><strong class="numero-painel">3</strong> avisos recentes.</p><a href="alertas.html">Ver central de alertas</a></div>
         </div>
         <h2>Últimos avisos</h2>
         <div class="lista-blocos">
@@ -33,9 +34,27 @@
             <div class="bloco"><h3>E-mail em vazamento</h3><p>contato@exemplo.com · Hoje, às 10h.</p><p>Orientação: altere senhas reutilizadas e ative a autenticação em dois fatores.</p></div>
             <div class="bloco"><h3>Sensor desconectado</h3><p>Sensor da garagem · Hoje, às 11h.</p><p>Verifique a alimentação e a conexão do equipamento.</p></div>
         </div>
-    </div>
+        <section class="bloco relatorio" id="relatorio">
+            <h2>Relatório de segurança</h2>
+            <p>Resumo demonstrativo dos últimos avisos registrados no painel.</p>
+            <div class="tabela-relatorio">
+                <table>
+                    <caption>Ocorrências do dia</caption>
+                    <thead>
+                        <tr><th scope="col">Horário</th><th scope="col">Origem</th><th scope="col">Ocorrência</th><th scope="col">Próxima ação</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><time datetime="09:00">9h</time></td><th scope="row">Câmera da entrada</th><td>Movimento detectado</td><td>Conferir a entrada.</td></tr>
+                        <tr><td><time datetime="10:00">10h</time></td><th scope="row">E-mail acompanhado</th><td>E-mail encontrado em vazamento</td><td>Alterar senhas reutilizadas.</td></tr>
+                        <tr><td><time datetime="11:00">11h</time></td><th scope="row">Sensor da garagem</th><td>Dispositivo desconectado</td><td>Verificar alimentação e rede.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="acoes-relatorio"><a href="alertas.html">Consultar todos os alertas</a> · Use a opção de impressão do navegador para salvar o relatório em PDF.</p>
+        </section>
+    </main>
     <div class="rodape">
-        <p>Nome da empresa · Segurança física e digital.</p>
+        <p>Segurança Integrada · Segurança física e digital.</p>
         <div class="menu-rodape"><a href="inicio.html">Início</a><a href="dispositivos.html">Meus dispositivos</a></div>
     </div>
 </body>

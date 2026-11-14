@@ -3,6 +3,9 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -17,7 +20,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 34px;
+    font-size: clamp(28px, 4vw, 38px);
     margin: 0 0 14px;
 }
 
@@ -56,6 +59,8 @@ h3 {
 }
 
 .conteudo {
+    flex: 1;
+    width: 100%;
     max-width: 1180px;
     margin: 0 auto;
     padding: 32px 24px;
@@ -81,15 +86,12 @@ h3 {
 }
 
 .imagem-banner img {
-    width: 240px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
+    max-width: 420px;
 }
 
 .acoes-banner {
-    color: #193b60;
-    font-weight: bold;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .servicos, .como-funciona {
@@ -195,12 +197,21 @@ a {
     color: #754800;
 }
 
-.imagem-produto {
+.imagem-produto, .imagem-banner img {
     display: block;
-    width: 160px;
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
     margin: 0 auto;
+    background-color: #f4f7fa;
+    border-radius: 6px;
+}
+
+.som-alerta {
+    display: block;
+    width: 100%;
+    max-width: 350px;
 }
 
 .catalogo h2 {
@@ -218,7 +229,7 @@ label {
     margin: 15px 0;
 }
 
-input, textarea {
+input, select, textarea {
     display: block;
     width: 100%;
     padding: 10px;
@@ -238,19 +249,106 @@ textarea {
     margin-top: 25px;
 }
 
-.botao {
+.botao, .botao-secundario {
     display: inline-block;
     padding: 10px 15px;
     background-color: #193b60;
     color: white;
     border-radius: 4px;
-    border: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1.5;
+    border: 1px solid #193b60;
 }
 
-.botao:disabled {
-    background-color: #64748b;
+.botao-secundario {
+    color: #193b60;
+    background-color: white;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .botao, .botao-secundario {
+        transition: transform 160ms ease;
+    }
+
+    .botao:hover, .botao-secundario:hover {
+        transform: scale(1.05);
+    }
+}
+
+a:focus-visible, button:focus-visible, summary:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid #367bc0;
+    outline-offset: 3px;
+}
+
+.menu a[aria-current="page"] {
+    color: #cce7ff;
+    font-weight: bold;
+    text-underline-offset: 4px;
+}
+
+.numero-painel {
+    font-size: 26px;
+    color: #193b60;
+}
+
+.pergunta {
+    padding: 12px 0;
+    border-top: 1px solid #d5dfe8;
+}
+
+.pergunta summary {
+    cursor: pointer;
+    color: #193b60;
+    font-weight: bold;
+}
+
+.pergunta p {
+    margin: 8px 0 0;
+}
+
+.retorno-formulario {
+    display: none;
+    padding: 10px 12px;
+    background-color: #e5f3eb;
+    border-radius: 4px;
+}
+
+.retorno-formulario:target {
+    display: block;
+}
+
+.tabela-relatorio {
+    overflow-x: auto;
+}
+
+.tabela-relatorio table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-relatorio caption {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.tabela-relatorio th, .tabela-relatorio td {
+    padding: 8px 12px;
+    border: 1px solid #d5dfe8;
+    text-align: left;
+    vertical-align: top;
+}
+
+.tabela-relatorio thead {
+    background-color: #e7f0f8;
+}
+
+.tabela-relatorio tbody tr:nth-child(even) {
+    background-color: #f4f7fa;
 }
 
 @media (max-width: 860px) {
@@ -274,10 +372,6 @@ textarea {
         min-width: 0;
     }
 
-    h1 {
-        font-size: 28px;
-    }
-
     .catalogo {
         grid-template-columns: 1fr;
         gap: 14px;
@@ -289,5 +383,28 @@ textarea {
 
     .menu {
         gap: 10px 14px;
+    }
+}
+
+@media print {
+    body {
+        display: block;
+        min-height: 0;
+        background-color: white;
+    }
+
+    .cabecalho, .rodape, .acoes-relatorio,
+    .conteudo:has(> .relatorio) > :not(.relatorio) {
+        display: none;
+    }
+
+    .conteudo, .relatorio {
+        max-width: none;
+        padding: 0;
+        border: 0;
+    }
+
+    .tabela-relatorio tr {
+        break-inside: avoid;
     }
 }

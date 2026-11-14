@@ -8,18 +8,18 @@
 </head>
 <body>
     <div class="cabecalho">
-        <div class="logo"><p>Nome da empresa</p></div>
-        <div class="menu">
+        <div class="logo"><p>Segurança Integrada</p></div>
+        <nav class="menu" aria-label="Menu principal">
             <a href="inicio.html">Início</a>
             <a href="produtos.html">Produtos</a>
             <a href="painel.html">Painel</a>
             <a href="dispositivos.html">Meus dispositivos</a>
             <a href="protecao-digital.html">Proteção digital</a>
-            <a href="alertas.html">Alertas</a>
+            <a href="alertas.html" aria-current="page">Alertas</a>
             <a href="suporte.html">Suporte</a>
-        </div>
+        </nav>
     </div>
-    <div class="conteudo">
+    <main class="conteudo">
         <h1>Central de alertas</h1>
         <p>Confira os avisos das suas contas e dos equipamentos conectados.</p>
         <h2>Proteção digital</h2>
@@ -47,11 +47,30 @@
                 <a href="suporte.html">Consultar ajuda</a>
             </div>
         </div>
+        <h2 id="sons-de-alerta">Sons de alerta</h2>
+        <div class="lista-blocos">
+            <div class="bloco">
+                <h3>Bipe de aviso</h3>
+                <p>Exemplo de som para um novo aviso no painel.</p>
+                <audio class="som-alerta" controls preload="none" aria-label="Bipe de aviso">
+                    <source src="../sons/Aviso.mp3.wav" type="audio/wav">
+                    <a href="../sons/Aviso.mp3.wav">Ouvir bipe de aviso</a>
+                </audio>
+            </div>
+            <div class="bloco">
+                <h3>Alarme residencial</h3>
+                <p>Exemplo de sirene para um alerta de equipamento.</p>
+                <audio class="som-alerta" controls preload="none" aria-label="Alarme residencial">
+                    <source src="../sons/Alarme.mp3.wav" type="audio/wav">
+                    <a href="../sons/Alarme.mp3.wav">Ouvir alarme residencial</a>
+                </audio>
+            </div>
+        </div>
         <p><a href="protecao-digital.html">Voltar para proteção digital</a></p>
         <p><a href="suporte.html">Ir para suporte</a></p>
-    </div>
+    </main>
     <div class="rodape">
-        <p>Nome da empresa · Segurança física e digital.</p>
+        <p>Segurança Integrada · Segurança física e digital.</p>
         <div class="menu-rodape"><a href="inicio.html">Início</a><a href="suporte.html">Suporte</a></div>
     </div>
 </body>

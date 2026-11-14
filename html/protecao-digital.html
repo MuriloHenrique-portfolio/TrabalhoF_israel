@@ -8,18 +8,18 @@
 </head>
 <body>
     <div class="cabecalho">
-        <div class="logo"><p>Nome da empresa</p></div>
-        <div class="menu">
+        <div class="logo"><p>Segurança Integrada</p></div>
+        <nav class="menu" aria-label="Menu principal">
             <a href="inicio.html">Início</a>
             <a href="produtos.html">Produtos</a>
             <a href="painel.html">Painel</a>
             <a href="dispositivos.html">Meus dispositivos</a>
-            <a href="protecao-digital.html">Proteção digital</a>
+            <a href="protecao-digital.html" aria-current="page">Proteção digital</a>
             <a href="alertas.html">Alertas</a>
             <a href="suporte.html">Suporte</a>
-        </div>
+        </nav>
     </div>
-    <div class="conteudo">
+    <main class="conteudo">
         <h1>Proteção digital</h1>
         <p>Veja a situação dos e-mails que você acompanha e consulte os avisos de cada conta.</p>
         <div class="lista-blocos">
@@ -37,14 +37,24 @@
                 <a href="alertas.html">Ver detalhes do alerta</a>
             </div>
         </div>
-        <div class="bloco">
+        <form class="bloco" action="#simulacao-email" method="get">
             <h2>Adicionar e-mail</h2>
-            <p>Informe o endereço associado à conta que deseja acompanhar.</p>
-            <label>E-mail para acompanhamento<input type="email" placeholder="seuemail@exemplo.com"></label>
-        </div>
-    </div>
+            <p>Use um e-mail fictício para simular o acompanhamento de uma conta.</p>
+            <label>Serviço
+                <select required>
+                    <option value="">Selecione um serviço</option>
+                    <option>Instagram</option>
+                    <option>E-mail</option>
+                    <option>Outro serviço</option>
+                </select>
+            </label>
+            <label>E-mail associado<input type="email" placeholder="voce@exemplo.com" required></label>
+            <button class="botao" type="submit">Simular cadastro</button>
+            <p class="retorno-formulario" id="simulacao-email">Simulação concluída. O painel continua exibindo somente as contas de exemplo.</p>
+        </form>
+    </main>
     <div class="rodape">
-        <p>Nome da empresa · Segurança física e digital.</p>
+        <p>Segurança Integrada · Segurança física e digital.</p>
         <div class="menu-rodape"><a href="painel.html">Painel</a><a href="suporte.html">Suporte</a></div>
     </div>
 </body>

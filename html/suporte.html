@@ -8,48 +8,67 @@
 </head>
 <body>
     <div class="cabecalho">
-        <div class="logo"><p>Nome da empresa</p></div>
-        <div class="menu">
+        <div class="logo"><p>Segurança Integrada</p></div>
+        <nav class="menu" aria-label="Menu principal">
             <a href="inicio.html">Início</a>
             <a href="produtos.html">Produtos</a>
             <a href="painel.html">Painel</a>
             <a href="dispositivos.html">Meus dispositivos</a>
             <a href="protecao-digital.html">Proteção digital</a>
             <a href="alertas.html">Alertas</a>
-            <a href="suporte.html">Suporte</a>
-        </div>
+            <a href="suporte.html" aria-current="page">Suporte</a>
+        </nav>
     </div>
-    <div class="conteudo">
+    <main class="conteudo">
         <h1>Ajuda e suporte</h1>
         <p>Encontre orientações para acompanhar suas contas e seus equipamentos.</p>
         <div class="bloco">
             <h2>Perguntas frequentes</h2>
-            <h3>Como conectar uma câmera?</h3>
-            <p>Verifique se o equipamento está ligado e conectado à rede. Tenha o código do dispositivo em mãos para vinculá-lo à sua conta.</p>
-            <h3>O que fazer quando aparece um alerta de vazamento?</h3>
-            <p>Altere a senha do serviço afetado e de outras contas que utilizem a mesma senha. Ative a autenticação em dois fatores quando disponível.</p>
-            <h3>Meu sensor está desconectado. O que verificar?</h3>
-            <p>Confira a bateria ou a alimentação do aparelho e a conexão com a rede. Depois, consulte o status em Meus dispositivos.</p>
-            <a href="dispositivos.html">Ver meus dispositivos</a>
-            <h3>Qual é a diferença entre os dois sensores?</h3>
-            <p>O sensor de movimento identifica atividade em uma área, como um corredor. O sensor de abertura avisa quando uma porta ou janela específica é aberta.</p>
-            <h3>Posso instalar a fechadura digital em qualquer porta?</h3>
-            <p>Antes de escolher o modelo, confira no manual a espessura de porta exigida, o espaço para instalação e o sentido de abertura.</p>
-            <a href="produtos.html">Ver equipamentos do catálogo</a>
+            <details class="pergunta">
+                <summary>Como conectar uma câmera?</summary>
+                <p>Verifique se o equipamento está ligado e conectado à rede. Tenha o código do dispositivo em mãos para vinculá-lo à sua conta.</p>
+            </details>
+            <details class="pergunta">
+                <summary>O que fazer quando aparece um alerta de vazamento?</summary>
+                <p>Altere a senha do serviço afetado e de outras contas que utilizem a mesma senha. Ative a autenticação em dois fatores quando disponível.</p>
+            </details>
+            <details class="pergunta">
+                <summary>Meu sensor está desconectado. O que verificar?</summary>
+                <p>Confira a bateria ou a alimentação do aparelho e a conexão com a rede. Depois, consulte o status em Meus dispositivos.</p>
+                <a href="dispositivos.html">Ver meus dispositivos</a>
+            </details>
+            <details class="pergunta">
+                <summary>Qual é a diferença entre os dois sensores?</summary>
+                <p>O sensor de movimento identifica atividade em uma área, como um corredor. O sensor de abertura avisa quando uma porta ou janela específica é aberta.</p>
+            </details>
+            <details class="pergunta">
+                <summary>Posso instalar a fechadura digital em qualquer porta?</summary>
+                <p>Antes de escolher o modelo, confira no manual a espessura de porta exigida, o espaço para instalação e o sentido de abertura.</p>
+                <a href="produtos.html">Ver equipamentos do catálogo</a>
+            </details>
         </div>
-        <div class="bloco contato-suporte">
+        <form class="bloco contato-suporte" action="#simulacao-contato" method="get">
             <h2>Contato com o suporte</h2>
-            <p>Descreva sua dúvida e informe qual equipamento ou conta precisa de atenção. Não envie senhas.</p>
-            <label>Nome<input type="text" placeholder="Seu nome"></label>
-            <label>E-mail<input type="email" placeholder="seuemail@exemplo.com"></label>
-            <label>Mensagem<textarea rows="5" placeholder="Descreva sua dúvida"></textarea></label>
-            <button class="botao" type="button" disabled>Enviar mensagem</button>
-            <p>Envio indisponível no momento.</p>
-        </div>
+            <p>Use dados fictícios para simular um atendimento.</p>
+            <label>Nome<input type="text" maxlength="80" required></label>
+            <label>E-mail<input type="email" placeholder="voce@exemplo.com" required></label>
+            <label>Assunto
+                <select required>
+                    <option value="">Selecione um assunto</option>
+                    <option>Instalação de equipamentos</option>
+                    <option>Dispositivo desconectado</option>
+                    <option>Alerta de segurança digital</option>
+                    <option>Outro assunto</option>
+                </select>
+            </label>
+            <label>Mensagem<textarea rows="5" maxlength="600" required></textarea></label>
+            <button class="botao" type="submit">Simular envio</button>
+            <p class="retorno-formulario" id="simulacao-contato">Simulação concluída. Nenhuma mensagem foi enviada.</p>
+        </form>
         <p><a href="inicio.html">Voltar ao início</a></p>
-    </div>
+    </main>
     <div class="rodape">
-        <p>Nome da empresa · Segurança física e digital.</p>
+        <p>Segurança Integrada · Segurança física e digital.</p>
         <div class="menu-rodape"><a href="inicio.html">Início</a><a href="alertas.html">Alertas</a></div>
     </div>
 </body>
